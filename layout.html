@@ -30,36 +30,36 @@
     <script src="figure.js"></script>
     <script>
       var data = {
-        title: 'Twierdzenie Pitagorasa',
-        description: 'Twierdzenie Pitagorasa mówi, że w dowolnym trójkącie prostokątnym suma kwadratów długości przyprostokątnych jest równa kwadratowi długości przeciwprostokątnej tego trójkąta.',
+        title: 'Title',
+        description: 'Description',
         dataReader: { 
-          title: 'Dane',
-          text: 'Podaj dane, żeby obliczyć Twierdzenie Pitagorasa dla wybranego przez siebie trójkąta prostokątnego.'
+          title: 'DataReaderTitle',
+          text: 'DataReaderText'
         },
         infoWriter: {
-          title: 'Wynik'
+          title: 'InfoWriterText'
         },
         enteredData: [
           {
-            text: 'Długość przyprostokątnej ',
-            name: 'a',
-            value: 1,
-            id: 0
+          text: 'Text1 ',
+          name: 'A',
+          value: 1,
+          id: 0
           },
           {
-            text: 'Długość przyprostokątnej ',
-            name: 'b',
-            value: 1,
-            id: 1
+          text: 'Text2 ',
+          name: 'B',
+          value: 1,
+          id: 1
           }
         ],
         result: {
-          text: 'Długość przeciwprostokątnej ',
-          name: 'c',
-          value: Math.round(Math.sqrt(2) * 100000) / 100000
+          text: 'Text3 ',
+          name: 'C',
+          value: Math.round(Math.sqrt(2) * 100000) / 100000 //MATHEMATICAL FORMULA
         },
-        useCanvas: true,
-        figure: "rectangularTriangle"
+        useCanvas: false,
+        figure: "FigureName"
       }
 
       new Vue({
@@ -68,8 +68,8 @@
           methods: {
             draw: function(){
               if (this.useCanvas){
-                drawFigure(this.figure, this.enteredData[0].value, this.enteredData[1].value); 
-              }   
+                drawFigure(this.figure, this.enteredData[0].value, this.enteredData[1].value);
+              }
               this.result.value = Math.round(Math.sqrt(Math.pow(this.enteredData[0].value, 2) + Math.pow(this.enteredData[1].value, 2)) * 100000) / 100000;
             }
           }
