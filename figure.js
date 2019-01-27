@@ -28,10 +28,8 @@ function drawFigure(figureName, a, b){
         drawSide(0, a, 'a', false);
         drawSide(b, a, 'b', true);
         drawSide(0, 0, 'c', true);
-    } else if (figureName == "regulartriangle") {
-        
-    } else if (false){
-        
+    } else if (figureName == "regulartriangle") {       
+        //to be continued...
     } else {
         console.error("Podano nie właściwą liczbę boków");
     }
